@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Orange</title>
+    <title>Orangetest3</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
  <link href="css/style.css" rel="stylesheet">
@@ -19,13 +19,13 @@
     <section id='newyork' class='active'>
         <h2>New York</h2>
      <h3>Central Park</h3>
-        <p>April 2018. Piber Chapman sidder i Central Park med sin kæreste, da politiet pludselig står foran hende. Er du Piber Chapman, spørger de. Ja, svarer hun. Klokken er nu 16.55 og du er anholdt. Piber kigger forvirret på sin forlovede og udbryder; det må være en fejl!<br> <br><img src="images/piper.jpeg"></p>
+        <p>April 2018. Piber Chapman sgår rundt i Central Park Zoo, med sin forlovede, da politiet pludselig står foran hende. Er du Piber Chapman, spørger de. Ja, svarer hun. Klokken er nu 16.55 og du er anholdt. Piber kigger forvirret på sin forlovede og udbryder; det må være en fejl!<br> <br><img src="images/piper.jpeg"></p>
      
    </section>
     <section id='colombia'>
         <h2>colombia</h2>
      <h3> Medelìn</h3>
-        <p>Det viste sig at Piper for ti år siden , under en rejse til Colombia, mødte en mand der hed Walter White. Han var kemiker og solgte vitaminpiller. Han sad i en lejlighed i "Calle Nueva", og fremstillede pillerne, der viste sig at være kokain. Det bedste af slagsen, hvis du spørger de lokale pushere.<br><br>
+        <p>Det viste sig at Piper for ti år siden , under en rejse til Colombia, mødte en mand der hed Walter White. Han var kemiker og solgte vitaminpiller. Han sad i en lille lejlighed i "Calle 46-Maturin", og fremstillede pillerne, der viste sig at være kokain. Det bedste af slagsen, hvis du spørger de lokale pushere.<br><br>
      <img src="images/walter.jpg"></p>
     </section>
     <section id='miami'>
@@ -49,28 +49,28 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFuZWthc3RlbiIsImEiOiJjamZpcGRtZXo0eTcwMzJwb
   
   var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/janekasten/cjfjd5blh7rya2rpdkucy14ky',
-    center: [-73.951639,40.792476],
-    zoom: 16.5,
-    bearing: 27,
-    pitch: 45
+    style: 'mapbox://styles/janekasten/cjflavl26hdhc2ro9kbzf996x',
+    center: [-73.971055,40.767983],
+    zoom: 16.81,
+    bearing: 60,
+    pitch: 60
 });
 
   // object with places and geographic positions
   
 var chapters = {
     'newyork': {
-        bearing: 27,
-        center: [-73.949849,40.797774],
-        zoom: 15.8,
+        bearing: 60.00,
+        center: [-73.971055,40.767983],
+        zoom: 16.81,
         pitch: 60
     },
     'colombia': {
         duration: 6000,
-        center: [-75.573464, 6.243305],
-        bearing: 150,
-        zoom: 17.37,
-        pitch: 60
+        center: [-75.569402, 6.247473],
+        bearing: -20.00,
+        zoom: 18.28,
+        pitch: 10.50
     },
     'miami': {
         bearing: 90,
@@ -80,9 +80,9 @@ var chapters = {
         pitch: 60
     },
     'kbh': {
-        bearing: 90,
-        center: [12.541167, 55.663316],
-        zoom: 15.58,
+        bearing: 0,
+        center: [12.538044, 55.661518],
+        zoom: 16.70,
      pitch: 60
     },
     
