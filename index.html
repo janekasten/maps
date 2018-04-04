@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Orangetest3</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+ <link href="css/style.css" rel="stylesheet">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+ 
+<body>
+
+ <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+
+
+<div id="map"></div>
+<div id='features'>
+    <section id='newyork' class='active'>
+        <h2>New York</h2>
+     <h3>Central Park</h3>
+        <p>April 2018. Piber Chapman sidder i Central Park med sin kæreste, da politiet pludselig står foran hende. Er du Piber Chapman, spørger de. Ja, svarer hun. Klokken er nu 16.55 og du er anholdt. Piber kigger forvirret på sin forlovede og udbryder; det må være en fejl!<br> <br><img src="images/piper.jpeg"></p>
+     
+   </section>
+    <section id='colombia'>
+        <h2>colombia</h2>
+     <h3> Medelìn</h3>
+        <p>Det viste sig at Piper for ti år siden , under en rejse til Colombia, mødte en mand der hed Walter White. Han var kemiker og solgte vitaminpiller. Han sad i en lejlighed i "Calle Nueva", og fremstillede pillerne, der viste sig at være kokain. Det bedste af slagsen, hvis du spørger de lokale pushere.<br><br>
+     <img src="images/walter.jpg"></p>
+    </section>
+    <section id='miami'>
+        <h2>Miami</h2>
+     <h3>Miami Beach Golf Club</h3>
+        <p>Vitaminpillerne, som var det reneste kokain,solgte Piper til hendes ex-kæreste Alex, hun havde nemlig gode forbindelser i Miami Beach Golf Club". Klubben hvor alle de rige amerikanere hygger sig og spiller golf imens de drak champagne.<br><br>
+     <img src="images/Alex.jpeg"></p>
+    </section>
+    <section id='kbh'>
+        <h2>København</h2>
+     <h3>Vestre Fængsel</h3>
+        <p>Men Alex var en rigtig dum exkæreste, så hun angav Piper til politiet. Men fordi de amerikanske fængler er overfyldte,blev Piper deporteret til Vestre fængsel i Kbh, hvor hun hygger sig med sin nye veninde Crazy Eyes.<br><br>
+     <img src="images/Crazyeyes.jpeg">
+     </p>
+    </section>
+ </div>
+ <script>
+  
+mapboxgl.accessToken = 'pk.eyJ1IjoiamFuZWthc3RlbiIsImEiOiJjamZpcGRtZXo0eTcwMzJwbm84Y3hkb3dzIn0.zxiObrL7dGbG1IjkBXnu9A';
+  
+  
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/janekasten/cjfjd5blh7rya2rpdkucy14ky',
+    center: [-73.951639,40.792476],
+    zoom: 16.5,
+    bearing: 27,
+    pitch: 45
+});
+
+  // object with places and geographic positions
+  
+var chapters = {
+    'newyork': {
+        bearing: 27,
+        center: [-73.949849,40.797774],
+        zoom: 15.8,
+        pitch: 60
+    },
+    'colombia': {
+        duration: 6000,
+        center: [-75.573464, 6.243305],
+        bearing: 150,
+        zoom: 17.37,
+        pitch: 60
+    },
+    'miami': {
+        bearing: 90,
+        center: [-80.135673, 25.802578],
+        zoom: 15.36,
+        speed: 0.6,
+        pitch: 60
+    },
+    'kbh': {
+        bearing: 90,
+        center: [12.541167, 55.663316],
+        zoom: 15.58,
+     pitch: 60
+    },
+    
+ 'charing-cross': {
+        bearing: 90,
+        center: [-0.12416858, 51.50779757],
+        zoom: 14.3,
+        pitch: 60
+    }
+    
+};
+
+// On every scroll event, check which element is on screen
+  
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+};
+
+var activeChapterName = 'newyork';
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+
+    map.flyTo(chapters[chapterName]);
+
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
+
+    activeChapterName = chapterName;
+}
+
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+} 
+
+</script>
+
+ 
+
+
+
+</body>
+</html>
