@@ -20,7 +20,7 @@ body { margin:0; padding:0; }
 h2{
  font-family: Helvetica;
  font-size: 2.5em;
- color: orange;
+ color: #f66c2d;
 }
 
 h3{
@@ -54,7 +54,7 @@ section.active {
 }
 section:last-child {
     border-bottom: none;
-    margin-bottom: 500px;
+   
 }
 
 /*----- 
@@ -78,4 +78,6 @@ Resposive sizes: Sæt sizing ind til de forskellige størrelser.
 @media(min-width:1024px){
     
 }
+
+
 
