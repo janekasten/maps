@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Orangetest3</title>
+    <title>Orange</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
  <link href="css/style.css" rel="stylesheet">
@@ -64,6 +64,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFuZWthc3RlbiIsImEiOiJjamZpcGRtZXo0eTcwMzJwb
     zoom: 16.81,
     bearing: 60,
     pitch: 60
+   
+   
+
+  
 });
 
   // object with places and geographic positions
@@ -72,8 +76,12 @@ var chapters = {
     'newyork': {
         bearing: 60.00,
         center: [-73.971055,40.767983],
-        zoom: 16.81,
+        zoom: 18.81,
         pitch: 60
+     
+    
+     
+     
     },
     'colombia': {
         duration: 6000,
@@ -135,6 +143,29 @@ function isElementOnScreen(id) {
     var bounds = element.getBoundingClientRect();
     return bounds.top < window.innerHeight && bounds.bottom > 0;
 } 
+  
+  
+  
+  // ikon på siden
+  
+  var marker = new mapboxgl.Marker()
+            .setLngLat([-73.971648,40.767244])
+            .addTo(map);
+var marker = new mapboxgl.Marker()
+            .setLngLat([-75.569187, 6.247450])
+            .addTo(map);
+var marker = new mapboxgl.Marker()
+            .setLngLat([-80.135673, 25.802578])
+            .addTo(map);
+var marker = new mapboxgl.Marker()
+            .setLngLat([12.538044, 55.661518])
+            .addTo(map);
+var marker = new mapboxgl.Marker()
+            .setLngLat([2.169516, 41.385837])
+            .addTo(map);
+
+  
+  
 
 </script>
 
